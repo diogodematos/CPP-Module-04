@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 11:14:35 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 14:26:01 by dcarrilh         ###   ########.fr       */
+/*   Created: 2024/07/30 15:02:01 by dcarrilh          #+#    #+#             */
+/*   Updated: 2024/08/01 12:41:37 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal() : type("Default")
+Cat::Cat() : Animal()
 {
+  type = "Cat";
   std::cout << "Animal " << type << " Created" << std::endl;
 }
 
-Animal::Animal(std::string _type) : type(_type)
+Cat::~Cat()
 {
-  std::cout << "Animal " << type << " Created" << std::endl;
+  std::cout << "Animal " << type << " Destroyed" << std::endl;
 }
 
-Animal::~Animal()
+void Cat::makeSound() const
 {
-  std::cout << "Animal Default Destroyed" << std::endl;
-}
-
-const std::string& Animal::getType() const
-{
-  return type;
-}
-
-void Animal::makeSound() const
-{
-  std::cout << "Animal Sound" << std::endl;
+  std::cout << "Miau" << std::endl;
 }

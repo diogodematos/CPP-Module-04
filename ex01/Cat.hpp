@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 12:54:15 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 14:41:01 by dcarrilh         ###   ########.fr       */
+/*   Created: 2024/07/30 14:49:10 by dcarrilh          #+#    #+#             */
+/*   Updated: 2024/08/01 12:22:39 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef CAT_H
+# define CAT_H
 
-#include <iostream>
-#include <string>
+# include "Animal.hpp"
 
-class WrongAnimal
+class Cat : public Animal
 {
-  protected:
-    
-    std::string type;
-    
   public:
-  
-    WrongAnimal();
-    virtual ~WrongAnimal();
-    
+
+    Cat();
+    ~Cat();
+
     void makeSound() const;
-    
 };
 
 #endif

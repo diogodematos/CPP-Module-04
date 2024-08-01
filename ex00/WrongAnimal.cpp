@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 12:54:15 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 14:41:01 by dcarrilh         ###   ########.fr       */
+/*   Created: 2024/08/01 14:22:13 by dcarrilh          #+#    #+#             */
+/*   Updated: 2024/08/01 14:27:21 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#include "WrongAnimal.hpp"
 
-#include <iostream>
-#include <string>
-
-class WrongAnimal
+WrongAnimal::WrongAnimal() : type("Default")
 {
-  protected:
-    
-    std::string type;
-    
-  public:
-  
-    WrongAnimal();
-    virtual ~WrongAnimal();
-    
-    void makeSound() const;
-    
-};
+  std::cout << "WrongAnimal " << type << " Created" << std::endl;
+}
 
-#endif
+WrongAnimal::~WrongAnimal()
+{
+  std::cout << "WrongAnimal Default Destroyed" << std::endl;
+}
+
+void WrongAnimal::makeSound() const
+{
+  std::cout << "WrongAnimal Sound" << std::endl;
+}
