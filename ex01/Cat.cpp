@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 15:02:01 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 12:41:37 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/01 15:27:19 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 Cat::Cat() : Animal()
 {
   type = "Cat";
+  brain = new Brain();
   std::cout << "Animal " << type << " Created" << std::endl;
 }
 
 Cat::~Cat()
 {
+  delete brain;
   std::cout << "Animal " << type << " Destroyed" << std::endl;
 }
 

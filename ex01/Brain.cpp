@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 11:35:24 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 15:31:46 by dcarrilh         ###   ########.fr       */
+/*   Created: 2024/08/01 15:19:03 by dcarrilh          #+#    #+#             */
+/*   Updated: 2024/08/01 15:20:34 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog() : Animal()
+Brain::Brain()
 {
-  type = "Dog";
-  brain = new Brain();
-  std::cout << "Animal " << type << " Created" << std::endl;
-
+  std::cout << "Brain Created" << std::endl;
 }
 
-Dog::~Dog()
+Brain::~Brain()
 {
-  delete brain;
-  std::cout << "Animal " << type << " Destroyed" << std::endl;
-}
-
-void Dog::makeSound() const
-{
-  std::cout << "Au Au" << std::endl;
+  std::cout << "Brain Destroyed" << std::endl;
 }
