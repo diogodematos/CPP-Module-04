@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:49:10 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 12:22:39 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 10:26:58 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Cat : public Animal
   public:
 
     Cat();
+    Cat(const Cat &copy);
+    Cat &operator=(const Cat &cat);
     ~Cat();
 
     void makeSound() const;

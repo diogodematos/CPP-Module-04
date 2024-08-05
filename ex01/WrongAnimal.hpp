@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:54:15 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 14:41:01 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 15:15:38 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class WrongAnimal
   public:
   
     WrongAnimal();
+    WrongAnimal(std::string type);
+    WrongAnimal(const WrongAnimal &copy);
+    WrongAnimal &operator=(const WrongAnimal &wronganimal);
     virtual ~WrongAnimal();
     
     void makeSound() const;

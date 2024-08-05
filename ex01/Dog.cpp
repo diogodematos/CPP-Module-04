@@ -6,24 +6,37 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 11:35:24 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 15:31:46 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 16:34:56 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : Animal("Dog")
 {
   type = "Dog";
+  std::cout << "Dog Created" << std::endl;
   brain = new Brain();
-  std::cout << "Animal " << type << " Created" << std::endl;
+}
 
+Dog::Dog(const Dog &copy)
+{
+  *this = copy;
+  std::cout << "Animal Dog Copy Created" << std::endl;
+}
+
+Dog &Dog::operator=(const Dog &dog)
+{
+  if (this != &dog)
+    type = dog.type;
+  std::cout << "Dog Operation Copy Called" << std::endl;
+  return *this;
 }
 
 Dog::~Dog()
 {
   delete brain;
-  std::cout << "Animal " << type << " Destroyed" << std::endl;
+  std::cout << "Dog Destroyed" << std::endl;
 }
 
 void Dog::makeSound() const

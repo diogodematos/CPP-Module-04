@@ -6,23 +6,37 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 15:02:01 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/01 15:27:19 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 16:35:11 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : Animal("Cat")
 {
   type = "Cat";
+  std::cout << "Cat Created" << std::endl;
   brain = new Brain();
-  std::cout << "Animal " << type << " Created" << std::endl;
+}
+
+Cat::Cat(const Cat &copy)
+{
+  *this = copy;
+  std::cout << "Cat Copy Created" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &cat)
+{
+  if (this != &cat)
+    type = cat.type;
+  std::cout << "Cat Operation Copy Called" << std::endl;
+  return *this;
 }
 
 Cat::~Cat()
 {
   delete brain;
-  std::cout << "Animal " << type << " Destroyed" << std::endl;
+  std::cout << "Cat Destroyed" << std::endl;
 }
 
 void Cat::makeSound() const
