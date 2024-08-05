@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 11:22:56 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/05 16:41:53 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 22:29:45 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,16 @@
 int main()
 {
   Dog basic;
-  Dog tmp = basic;
+		{
+			Dog tmp = basic;
+			std::cout << std::endl;
+      std::cout << std::endl;
+      Dog tmp2 (basic);
+		}
+		std::cout << std::endl;
+
+  std::cout << std::endl;
+
+  // Animal *Lo = new Dog();
+  // delete Lo;
 }

@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 11:35:24 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/05 16:34:56 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 22:17:38 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Dog::Dog() : Animal("Dog")
   brain = new Brain();
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal(copy)
 {
+  brain = NULL;
   *this = copy;
   std::cout << "Animal Dog Copy Created" << std::endl;
 }
@@ -28,7 +29,7 @@ Dog::Dog(const Dog &copy)
 Dog &Dog::operator=(const Dog &dog)
 {
   if (this != &dog)
-    type = dog.type;
+    brain = new Brain(*dog.brain);
   std::cout << "Dog Operation Copy Called" << std::endl;
   return *this;
 }

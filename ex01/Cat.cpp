@@ -6,7 +6,7 @@
 /*   By: dcarrilh <dcarrilh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 15:02:01 by dcarrilh          #+#    #+#             */
-/*   Updated: 2024/08/05 16:35:11 by dcarrilh         ###   ########.fr       */
+/*   Updated: 2024/08/05 22:18:18 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Cat::Cat() : Animal("Cat")
   brain = new Brain();
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : Animal(copy)
 {
+  brain = NULL;
   *this = copy;
   std::cout << "Cat Copy Created" << std::endl;
 }
@@ -28,7 +29,7 @@ Cat::Cat(const Cat &copy)
 Cat &Cat::operator=(const Cat &cat)
 {
   if (this != &cat)
-    type = cat.type;
+    brain = new Brain(*cat.brain);
   std::cout << "Cat Operation Copy Called" << std::endl;
   return *this;
 }
